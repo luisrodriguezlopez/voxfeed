@@ -13,4 +13,15 @@ class Post {
     fileprivate var text = String()
     fileprivate var image = String()
     fileprivate var  link = String()
+    
+    
+    init(text : String , image : String, link : String) {
+        self.text = text
+        self.image = image
+        self.link = link
+    }
+    
+    func getText() -> String {return self.text}
+    func getImage()-> String {return self.image}
+    func getLink() -> String {return self.link}
 }

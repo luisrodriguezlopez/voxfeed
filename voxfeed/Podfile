@@ -9,6 +9,8 @@ target 'voxfeed' do
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
   pod 'Skeleton'
+  pod 'SDWebImage', '~> 4.0'
+
   target 'voxfeedTests' do
     inherit! :search_paths
     # Pods for testing

@@ -9,10 +9,20 @@
 import UIKit
 
 class CardPublicationCell: UITableViewCell {
-
+    @IBOutlet weak var lblUsername: UILabel!
+    @IBOutlet weak var lblSocialNetwork: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var txtPost: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
+    @IBOutlet weak var imagePost: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    override func layoutSubviews() {
+        self.imagePost.reloadInputViews()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

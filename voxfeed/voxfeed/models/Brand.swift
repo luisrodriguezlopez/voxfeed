@@ -12,4 +12,14 @@ import Foundation
 class Brand {
     fileprivate var name = String()
     fileprivate var logo = String()
+    
+    init(name : String , logo : String) {
+        self.name = name
+        self.logo = logo
+    }
+    
+    
+    func getName() -> String {return self.name}
+    func getLogo() -> String {return self.logo}
+    
 }
