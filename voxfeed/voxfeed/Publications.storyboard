@@ -106,7 +106,7 @@
         <!--Web View Controller-->
         <scene sceneID="2gq-ZF-eHv">
             <objects>
-                <viewController id="Uoe-Lc-2cT" customClass="WebViewController" customModule="voxfeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uoe-Lc-2cT" customClass="WebViewController" customModule="voxfeed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SaT-kM-cnT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -88,6 +88,7 @@
                     <navigationItem key="navigationItem" title="VoxFeed" id="TTc-Wi-c5k"/>
                     <connections>
                         <outlet property="segmentedControl" destination="Ntj-NE-YbT" id="yi8-Q9-FOR"/>
+                        <segue destination="WYX-Kf-NHA" kind="show" identifier="toWebView" id="ctL-54-GGy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YoZ-Jz-7Pa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -101,6 +102,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zNm-n2-qvp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2192" y="504"/>
+        </scene>
+        <!--webView-->
+        <scene sceneID="EKy-sc-Lq6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Publications" referencedIdentifier="webView" id="WYX-Kf-NHA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9TA-VW-80B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2263" y="741"/>
         </scene>
     </scenes>
 </document>

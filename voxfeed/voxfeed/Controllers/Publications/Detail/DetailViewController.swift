@@ -159,15 +159,18 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override var previewActionItems: [UIPreviewActionItem] {
  
-        let likeAction = UIPreviewAction(title: "Ver publicación en \(self.promotedMessage.getSocialNetwork())", style: .default) { (action, viewController) -> Void in
-            self.performSegue(withIdentifier: "toWebView", sender: nil)
+        let openWebView = UIPreviewAction(title: "Ver publicación en \(self.promotedMessage.getSocialNetwork())", style: .default) { (action, viewController) -> Void in
+            let root = UIApplication.shared.keyWindow?.rootViewController as! UINavigationController
+            let main = root.childViewControllers[0] as! MainViewController
+            main.performSegue(withIdentifier: "toWebView", sender: self.promotedMessage.getPost().getLink())
+            
 
         }
         
-        let deleteAction = UIPreviewAction(title: "No", style: .destructive) { (action, viewController) -> Void in
+        let nopeAction = UIPreviewAction(title: "No", style: .destructive) { (action, viewController) -> Void in
         }
         
-        return [likeAction, deleteAction]
+        return [openWebView, nopeAction]
         
     }
     @IBAction func openWebView(_ sender: Any) {

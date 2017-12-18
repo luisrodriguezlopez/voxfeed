@@ -26,6 +26,11 @@ class MainViewController: UIViewController , MainNavigationController {
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier != "toWebView"  else {
+            var webView = segue.destination as! WebViewController
+            webView.url = sender as! String
+            return
+        }
         var navController = segue.destination as! UINavigationController
         var publicationsVC = navController.childViewControllers.first as! PublicationsViewController
         publicationsVC.mainDelegate = self
@@ -42,7 +47,8 @@ class MainViewController: UIViewController , MainNavigationController {
         self.segmentedControl.isHidden = false
 
     }
-
     
+
+
 
 }
