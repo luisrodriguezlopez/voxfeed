@@ -25,9 +25,7 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
     var imagesDictionary : [NSDictionary]!
     var presenter : PublicationsPresenter!
     var mainDelegate : MainNavigationController!
-    var facebookColor = UIColor.init(hex: "45609C")
-    var twitterColor = UIColor.init(hex: "1Da1f3")
-    var instagramColor = UIColor.init(hex: "E4405F")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         if( traitCollection.forceTouchCapability == .available){
@@ -45,8 +43,8 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
     }
  
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
     }
 
 
@@ -107,20 +105,16 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
 
     }
     
-
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         
-        let x = self.tableView.indexPathForRow(at: location)
-        print(x)
-        let currentPublication = self.model[(x?.row)!]
+        let indexPath = self.tableView.indexPathForRow(at: location)
+        let currentPublication = self.model[(indexPath?.row)!]
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "detailVC") as! DetailViewController
         detailVC.promotedMessage = currentPublication
-        self.navigationController?.navigationBar.isHidden = false
+//        self.navigationController?.navigationBar.isHidden = false
         detailVC.mainDelegate = self.mainDelegate
         self.mainDelegate.hideNaivgation()
         return detailVC
-        
-        
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
@@ -136,10 +130,7 @@ extension PublicationsViewController : PublicationsView {
         self.imagesDictionary = images
         self.tableView.reloadData()
     }
-    
     func showError() {
         
     }
-    
-    
 }

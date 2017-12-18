@@ -21,16 +21,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         footerButton.setTitle("Ver publicación en \(promotedMessage.getSocialNetwork())", for: .normal)
         footerButton.backgroundColor = Utils.getColorForSocialNetowrk(socialNetwork: promotedMessage.getSocialNetwork())
-        self.title = promotedMessage.getUser().getUsername()
-        subtitle = UILabel.init(frame: CGRect(x: self.view.frame.width/2 - 50, y: 12, width: 100, height: 30))
-        
-        subtitle.textAlignment = .center
-        subtitle.font = UIFont.init(name: "Arial", size: 11)
-        
-        subtitle.text = Utils.formatingDateToShort(stringDate: promotedMessage.getDate())
 
-    self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(-12.0, for: .default)
-        self.navigationController?.navigationBar.insertSubview(subtitle, at: 0)
         let headerCell = UINib(nibName: "HeaderImage", bundle: nil)
         let statsCell = UINib(nibName: "StatsCell", bundle: nil)
         let footer = UINib(nibName: "FooterButton", bundle: nil)
@@ -47,6 +38,18 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.navigationController?.navigationBar.subviews.last?.removeFromSuperview()
         self.navigationController?.navigationBar.isHidden = true
         self.mainDelegate.showNavigation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = promotedMessage.getUser().getUsername()
+        subtitle = UILabel.init(frame: CGRect(x: self.view.frame.width/2 - 50, y: 12, width: 100, height: 30))
+        subtitle.textAlignment = .center
+        subtitle.font = UIFont.init(name: "Arial", size: 11)
+        subtitle.text = Utils.formatingDateToShort(stringDate: promotedMessage.getDate())
+        self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(-12.0, for: .default)
+        self.navigationController?.navigationBar.insertSubview(subtitle, at: 0)
+        
     }
 
 
@@ -168,6 +171,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         let nopeAction = UIPreviewAction(title: "No", style: .destructive) { (action, viewController) -> Void in
+            
         }
         
         return [openWebView, nopeAction]
