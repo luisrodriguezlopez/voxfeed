@@ -7,9 +7,10 @@
 //
 
 import Foundation
-
+import UIKit
+import SDWebImage
 protocol PublicationsView : NSObjectProtocol {
-    func successRetrivePublications(publications : [PromotedMessage])
+    func successRetrivePublications(publications : [PromotedMessage] , images : [NSDictionary])
     func showError()
     
 }
@@ -33,11 +34,43 @@ class PublicationsPresenter : PublicationsProtocol{
            self.model =  response.map({ (dictionary) -> PromotedMessage in
                 return PromotedMessage.init(data : dictionary as! NSDictionary)
             })
-            self.view.successRetrivePublications(publications: self.model)
+            self.retriveImages(model: self.model, success: { (images) in
+                self.view.successRetrivePublications(publications: self.model, images : images)
+            })
         }) { (error) in
             self.view.showError()
         }
     }
+    
+    
+    
+    func retriveImages(model : [PromotedMessage], success : @escaping(_ images : [NSDictionary]) ->()) {
+        var imagesDictionaryArray : [NSDictionary] = []
+        for promoteMessage in model {
+            var img : UIImage!
+            self.retriveImage(promotedMessage: promoteMessage, success: { (image) in
+                var dictionary = NSDictionary()
+                dictionary = ["id" :  promoteMessage.getId(), "image" : image] 
+                imagesDictionaryArray.append(dictionary)
+                if imagesDictionaryArray.count == self.model.count {
+                    success(imagesDictionaryArray)
+                }
+            })
+        }
+    }
+    
+    
+    func retriveImage(promotedMessage : PromotedMessage , success : @escaping (_ image : UIImage) ->()) {
+        let manager = SDWebImageManager()
+        manager.imageDownloader?.downloadImage(with: URL.init(string: promotedMessage.getPost().getImage()), options: SDWebImageDownloaderOptions.continueInBackground, progress: nil, completed: { (image, data, error, complete) in
+            guard error == nil else {
+                return
+            }
+            success(image!)
+            
+        })
+    }
+    
     
     
 }

@@ -25,10 +25,19 @@
 		EE802BCF1FE242CD00CE8E5E /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE802BC91FE242CC00CE8E5E /* Brand.swift */; };
 		EE802BD21FE2481400CE8E5E /* Publications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE802BD11FE2481400CE8E5E /* Publications.storyboard */; };
 		EE802BD41FE2494C00CE8E5E /* CardPublication.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE802BD31FE2494C00CE8E5E /* CardPublication.xib */; };
+		EEA811BB1FE6F3B70049047E /* FooterButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA811BA1FE6F3B70049047E /* FooterButton.xib */; };
+		EEA811BF1FE7707D0049047E /* colorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA811BE1FE7707D0049047E /* colorExtension.swift */; };
+		EEA811C21FE779580049047E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA811C11FE779580049047E /* Utils.swift */; };
+		EEA811C41FE78E380049047E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA811C31FE78E380049047E /* WebViewController.swift */; };
 		EEB3EFF51FE385F00005E50B /* CardPublicationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB3EFF41FE385F00005E50B /* CardPublicationCell.swift */; };
 		EEB3EFF91FE38B200005E50B /* PublicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB3EFF81FE38B200005E50B /* PublicationsViewController.swift */; };
 		EEB3EFFC1FE38BBF0005E50B /* VoxfeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB3EFFB1FE38BBF0005E50B /* VoxfeedAPI.swift */; };
 		EEB3F03A1FE38DCF0005E50B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB3F0391FE38DCF0005E50B /* MainViewController.swift */; };
+		EECBDC081FE5D3B4002A66D7 /* HeaderImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = EECBDC071FE5D3B4002A66D7 /* HeaderImage.xib */; };
+		EECBDC0A1FE5D5D4002A66D7 /* StatsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EECBDC091FE5D5D4002A66D7 /* StatsCell.xib */; };
+		EECBDC0E1FE5D830002A66D7 /* HeaderImageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECBDC0D1FE5D830002A66D7 /* HeaderImageDetail.swift */; };
+		EECBDC101FE5DA4B002A66D7 /* StatsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECBDC0F1FE5DA4B002A66D7 /* StatsViewCell.swift */; };
+		EECBDC161FE5F820002A66D7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECBDC151FE5F820002A66D7 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,10 +99,19 @@
 		EE802BC91FE242CC00CE8E5E /* Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Brand.swift; path = voxfeed/models/Brand.swift; sourceTree = SOURCE_ROOT; };
 		EE802BD11FE2481400CE8E5E /* Publications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Publications.storyboard; sourceTree = "<group>"; };
 		EE802BD31FE2494C00CE8E5E /* CardPublication.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardPublication.xib; sourceTree = "<group>"; };
+		EEA811BA1FE6F3B70049047E /* FooterButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterButton.xib; sourceTree = "<group>"; };
+		EEA811BE1FE7707D0049047E /* colorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorExtension.swift; sourceTree = "<group>"; };
+		EEA811C11FE779580049047E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		EEA811C31FE78E380049047E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		EEB3EFF41FE385F00005E50B /* CardPublicationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPublicationCell.swift; sourceTree = "<group>"; };
 		EEB3EFF81FE38B200005E50B /* PublicationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationsViewController.swift; sourceTree = "<group>"; };
 		EEB3EFFB1FE38BBF0005E50B /* VoxfeedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoxfeedAPI.swift; sourceTree = "<group>"; };
 		EEB3F0391FE38DCF0005E50B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EECBDC071FE5D3B4002A66D7 /* HeaderImage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderImage.xib; sourceTree = "<group>"; };
+		EECBDC091FE5D5D4002A66D7 /* StatsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsCell.xib; sourceTree = "<group>"; };
+		EECBDC0D1FE5D830002A66D7 /* HeaderImageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderImageDetail.swift; sourceTree = "<group>"; };
+		EECBDC0F1FE5DA4B002A66D7 /* StatsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewCell.swift; sourceTree = "<group>"; };
+		EECBDC151FE5F820002A66D7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F0E212AE1DCCEB69B20D37F8 /* Pods-voxfeedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voxfeedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-voxfeedTests/Pods-voxfeedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FC295E7A0788D4973D47284D /* Pods-voxfeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voxfeedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-voxfeedTests/Pods-voxfeedTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +200,8 @@
 		EE802B901FE2402F00CE8E5E /* voxfeed */ = {
 			isa = PBXGroup;
 			children = (
+				EEA811C01FE7794A0049047E /* Utils */,
+				EEA811BD1FE770520049047E /* extensions */,
 				692ABBA91FE4382300A9B918 /* Presenters */,
 				EEB3EFFA1FE38BA70005E50B /* API */,
 				EEB3EFF71FE386D40005E50B /* Controllers */,
@@ -233,14 +253,35 @@
 			isa = PBXGroup;
 			children = (
 				EE802BD31FE2494C00CE8E5E /* CardPublication.xib */,
+				EECBDC071FE5D3B4002A66D7 /* HeaderImage.xib */,
+				EECBDC091FE5D5D4002A66D7 /* StatsCell.xib */,
+				EEA811BA1FE6F3B70049047E /* FooterButton.xib */,
 			);
 			path = xibs;
+			sourceTree = "<group>";
+		};
+		EEA811BD1FE770520049047E /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EEA811BE1FE7707D0049047E /* colorExtension.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		EEA811C01FE7794A0049047E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EEA811C11FE779580049047E /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		EEB3EFF31FE385C50005E50B /* Customcells */ = {
 			isa = PBXGroup;
 			children = (
 				EEB3EFF41FE385F00005E50B /* CardPublicationCell.swift */,
+				EECBDC0D1FE5D830002A66D7 /* HeaderImageDetail.swift */,
+				EECBDC0F1FE5DA4B002A66D7 /* StatsViewCell.swift */,
 			);
 			path = Customcells;
 			sourceTree = "<group>";
@@ -248,7 +289,7 @@
 		EEB3EFF71FE386D40005E50B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EEB3EFF81FE38B200005E50B /* PublicationsViewController.swift */,
+				EECBDC111FE5F7B9002A66D7 /* Publications */,
 				EEB3F0391FE38DCF0005E50B /* MainViewController.swift */,
 			);
 			path = Controllers;
@@ -260,6 +301,24 @@
 				EEB3EFFB1FE38BBF0005E50B /* VoxfeedAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		EECBDC111FE5F7B9002A66D7 /* Publications */ = {
+			isa = PBXGroup;
+			children = (
+				EECBDC121FE5F7CF002A66D7 /* Detail */,
+				EEB3EFF81FE38B200005E50B /* PublicationsViewController.swift */,
+			);
+			path = Publications;
+			sourceTree = "<group>";
+		};
+		EECBDC121FE5F7CF002A66D7 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				EECBDC151FE5F820002A66D7 /* DetailViewController.swift */,
+				EEA811C31FE78E380049047E /* WebViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,8 +438,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECBDC081FE5D3B4002A66D7 /* HeaderImage.xib in Resources */,
 				EE802BA01FE2402F00CE8E5E /* LaunchScreen.storyboard in Resources */,
 				EE802BD41FE2494C00CE8E5E /* CardPublication.xib in Resources */,
+				EECBDC0A1FE5D5D4002A66D7 /* StatsCell.xib in Resources */,
+				EEA811BB1FE6F3B70049047E /* FooterButton.xib in Resources */,
 				EE802B9D1FE2402F00CE8E5E /* Assets.xcassets in Resources */,
 				EE802B9B1FE2402F00CE8E5E /* Main.storyboard in Resources */,
 				EE802BD21FE2481400CE8E5E /* Publications.storyboard in Resources */,
@@ -547,6 +609,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEB3EFFC1FE38BBF0005E50B /* VoxfeedAPI.swift in Sources */,
+				EEA811C41FE78E380049047E /* WebViewController.swift in Sources */,
+				EECBDC0E1FE5D830002A66D7 /* HeaderImageDetail.swift in Sources */,
 				EEB3F03A1FE38DCF0005E50B /* MainViewController.swift in Sources */,
 				EEB3EFF51FE385F00005E50B /* CardPublicationCell.swift in Sources */,
 				692ABBAB1FE438E200A9B918 /* PublicationsPresenter.swift in Sources */,
@@ -554,9 +618,13 @@
 				EEB3EFF91FE38B200005E50B /* PublicationsViewController.swift in Sources */,
 				EE802BCF1FE242CD00CE8E5E /* Brand.swift in Sources */,
 				EE802BCC1FE242CD00CE8E5E /* Stats.swift in Sources */,
+				EEA811C21FE779580049047E /* Utils.swift in Sources */,
 				EE802BCB1FE242CD00CE8E5E /* PromotedMessage.swift in Sources */,
 				EE802BCE1FE242CD00CE8E5E /* Post.swift in Sources */,
+				EEA811BF1FE7707D0049047E /* colorExtension.swift in Sources */,
 				EE802BCA1FE242CD00CE8E5E /* User.swift in Sources */,
+				EECBDC161FE5F820002A66D7 /* DetailViewController.swift in Sources */,
+				EECBDC101FE5DA4B002A66D7 /* StatsViewCell.swift in Sources */,
 				EE802B921FE2402F00CE8E5E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

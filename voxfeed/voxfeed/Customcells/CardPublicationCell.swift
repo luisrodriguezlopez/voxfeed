@@ -15,6 +15,7 @@ class CardPublicationCell: UITableViewCell {
     @IBOutlet weak var txtPost: UILabel!
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var imagePost: UIImageView!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

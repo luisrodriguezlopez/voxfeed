@@ -13,6 +13,7 @@
         <!--Navigation Controller-->
         <scene sceneID="1qs-A5-Gqy">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ski-cH-PhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="RwM-Cy-p2m" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="8aF-64-XQi">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -24,7 +25,6 @@
                         <segue destination="PVK-nT-n3V" kind="relationship" relationship="rootViewController" id="0vg-O6-YPr"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ski-cH-PhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="606" y="563"/>
         </scene>
@@ -59,14 +59,13 @@
                                     <constraint firstAttribute="trailing" secondItem="Ntj-NE-YbT" secondAttribute="trailing" constant="8" id="ylK-hx-6jO"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggM-up-qgn">
-                                <rect key="frame" x="0.0" y="44" width="375" height="559"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggM-up-qgn">
+                                <rect key="frame" x="0.0" y="42" width="375" height="561"/>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7iu-WH-9T1">
-                                <rect key="frame" x="0.0" y="44" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="42" width="375" height="561"/>
                                 <connections>
-                                    <segue destination="RDD-52-lyv" kind="embed" id="cD9-KL-Nxe"/>
+                                    <segue destination="RDD-52-lyv" kind="embed" identifier="publications" id="cD9-KL-Nxe"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -74,15 +73,22 @@
                         <constraints>
                             <constraint firstItem="7iu-WH-9T1" firstAttribute="trailing" secondItem="BVB-nI-nQL" secondAttribute="trailing" id="3MN-kc-kjJ"/>
                             <constraint firstItem="7iu-WH-9T1" firstAttribute="leading" secondItem="BVB-nI-nQL" secondAttribute="leading" id="Aeq-4U-CXE"/>
+                            <constraint firstItem="ggM-up-qgn" firstAttribute="bottom" secondItem="BVB-nI-nQL" secondAttribute="bottom" id="J0R-bR-dtT"/>
+                            <constraint firstItem="ggM-up-qgn" firstAttribute="top" secondItem="LwF-cc-6Po" secondAttribute="bottom" id="KMA-jJ-har"/>
+                            <constraint firstItem="ggM-up-qgn" firstAttribute="trailing" secondItem="BVB-nI-nQL" secondAttribute="trailing" id="Q8G-bS-FnF"/>
                             <constraint firstItem="LwF-cc-6Po" firstAttribute="leading" secondItem="BVB-nI-nQL" secondAttribute="leading" id="RpW-fI-dvj"/>
                             <constraint firstItem="LwF-cc-6Po" firstAttribute="trailing" secondItem="BVB-nI-nQL" secondAttribute="trailing" id="TOo-qI-2oB"/>
                             <constraint firstItem="LwF-cc-6Po" firstAttribute="top" secondItem="FDJ-MP-FLt" secondAttribute="top" id="V00-9o-hh7"/>
+                            <constraint firstItem="ggM-up-qgn" firstAttribute="leading" secondItem="BVB-nI-nQL" secondAttribute="leading" id="WR4-rZ-ir3"/>
                             <constraint firstItem="7iu-WH-9T1" firstAttribute="bottom" secondItem="BVB-nI-nQL" secondAttribute="bottom" id="gD0-Ww-hO1"/>
-                            <constraint firstItem="7iu-WH-9T1" firstAttribute="top" secondItem="LwF-cc-6Po" secondAttribute="bottom" constant="2" id="x9Z-X1-3O2"/>
+                            <constraint firstItem="7iu-WH-9T1" firstAttribute="top" secondItem="LwF-cc-6Po" secondAttribute="bottom" id="x9Z-X1-3O2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BVB-nI-nQL"/>
                     </view>
                     <navigationItem key="navigationItem" title="VoxFeed" id="TTc-Wi-c5k"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="Ntj-NE-YbT" id="yi8-Q9-FOR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YoZ-Jz-7Pa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
