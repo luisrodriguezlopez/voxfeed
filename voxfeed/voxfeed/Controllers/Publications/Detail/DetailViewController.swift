@@ -23,10 +23,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         footerButton.backgroundColor = Utils.getColorForSocialNetowrk(socialNetwork: promotedMessage.getSocialNetwork())
         self.title = promotedMessage.getUser().getUsername()
         subtitle = UILabel.init(frame: CGRect(x: self.view.frame.width/2 - 50, y: 12, width: 100, height: 30))
-        
         subtitle.textAlignment = .center
         subtitle.font = UIFont.init(name: "Arial", size: 11)
-        
         subtitle.text = Utils.formatingDateToShort(stringDate: promotedMessage.getDate())
 
     self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(-12.0, for: .default)
@@ -39,8 +37,17 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
         guard !isGoingToWeb else {
+            isGoingToWeb = false
             return
         }
         self.navigationController?.title = "VoxFeed"
@@ -126,7 +133,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.lblNumStats.text = String(stats.getClicks())
             cell.icon.image = #imageLiteral(resourceName: "icon-clicks")
 
-
         }
         return cell
     }
@@ -155,16 +161,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    
-    
     override var previewActionItems: [UIPreviewActionItem] {
  
         let openWebView = UIPreviewAction(title: "Ver publicación en \(self.promotedMessage.getSocialNetwork())", style: .default) { (action, viewController) -> Void in
             let root = UIApplication.shared.keyWindow?.rootViewController as! UINavigationController
             let main = root.childViewControllers[0] as! MainViewController
             main.performSegue(withIdentifier: "toWebView", sender: self.promotedMessage.getPost().getLink())
-            
-
         }
         
         let nopeAction = UIPreviewAction(title: "No", style: .destructive) { (action, viewController) -> Void in
@@ -182,6 +184,5 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let webView = segue.destination as! WebViewController
         webView.url = self.promotedMessage.getPost().getLink()
     }
-
-
+    
 }
