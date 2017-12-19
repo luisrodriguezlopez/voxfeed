@@ -21,11 +21,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         footerButton.setTitle("Ver publicación en \(promotedMessage.getSocialNetwork())", for: .normal)
         footerButton.backgroundColor = Utils.getColorForSocialNetowrk(socialNetwork: promotedMessage.getSocialNetwork())
-        self.title = promotedMessage.getUser().getUsername()
-        subtitle = UILabel.init(frame: CGRect(x: self.view.frame.width/2 - 50, y: 12, width: 100, height: 30))
-        subtitle.textAlignment = .center
-        subtitle.font = UIFont.init(name: "Arial", size: 11)
-        subtitle.text = Utils.formatingDateToShort(stringDate: promotedMessage.getDate())
+
         let headerCell = UINib(nibName: "HeaderImage", bundle: nil)
         let statsCell = UINib(nibName: "StatsCell", bundle: nil)
         let footer = UINib(nibName: "FooterButton", bundle: nil)
@@ -42,7 +38,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return
         }
         self.navigationController?.title = "VoxFeed"
+        
         self.navigationController?.navigationBar.subviews.last?.removeFromSuperview()
+        self.subtitle.removeFromSuperview()
         self.navigationController?.navigationBar.isHidden = true
         self.mainDelegate.showNavigation()
     }

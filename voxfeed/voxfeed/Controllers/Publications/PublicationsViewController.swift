@@ -11,15 +11,8 @@ import SDWebImage
 import UIKit
 import RxSwift
 import RxCocoa
-// facebook color #45609C
-// twitter 1Da1f3
-// instagram E4405F
 
-// textColor  8f8e94
-
-// primary color 16D4E6
 class PublicationsViewController: UITableViewController, UIViewControllerPreviewingDelegate {
-
     
     var model : [PromotedMessage] = [PromotedMessage]()
     var imagesDictionary : [NSDictionary]!
@@ -43,9 +36,6 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
         
     }
     
-  
- 
-
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
     }
