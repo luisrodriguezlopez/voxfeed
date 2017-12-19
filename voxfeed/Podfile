@@ -8,7 +8,6 @@ target 'voxfeed' do
   pod 'Alamofire', '~> 4.6'
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
-  pod 'Skeleton'
   pod 'SDWebImage', '~> 4.0'
 
   target 'voxfeedTests' do

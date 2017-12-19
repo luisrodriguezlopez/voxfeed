@@ -67,7 +67,6 @@ class PublicationsPresenter : PublicationsProtocol{
                 return
             }
             success(image!)
-            
         })
     }
     

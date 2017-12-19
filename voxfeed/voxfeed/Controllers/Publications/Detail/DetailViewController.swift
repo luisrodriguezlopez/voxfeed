@@ -89,17 +89,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 header.brandImage.sd_setImage(with: URL.init(string: self.promotedMessage.getBrand().getLogo()), completed: { (image, error, option, url) in
                     header.brandImage.image = image
                 })
-            
         })
             return header
             
         default:
             cell = tableView.dequeueReusableCell(withIdentifier: "statsCell", for: indexPath) as! StatsViewCell
             
-            
-        
             return self.configCell(indexPath: indexPath, cell: cell, stats: promotedMessage.getStats())
-
         }
     }
     

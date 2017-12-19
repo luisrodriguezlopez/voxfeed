@@ -15,7 +15,7 @@ class Utils {
         var dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.ssssZ"
         let date = dateFormatter.date(from: stringDate)
-        dateFormatter.locale = NSLocale.autoupdatingCurrent
+        dateFormatter.locale = Locale.init(identifier: "es_MX")
         dateFormatter.dateFormat = "dd MMMM"
         return dateFormatter.string(from: date!)
     }

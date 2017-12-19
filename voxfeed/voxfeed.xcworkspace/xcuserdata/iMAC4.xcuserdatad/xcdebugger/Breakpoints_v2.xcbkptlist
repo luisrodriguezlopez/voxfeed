@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voxfeed/Controllers/Publications/PublicationsViewController.swift"
-            timestampString = "535329743.587036"
+            timestampString = "535408394.578453"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voxfeed/Controllers/Publications/Detail/DetailViewController.swift"
-            timestampString = "535329743.58729"
+            timestampString = "535408394.578715"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voxfeed/Controllers/Publications/Detail/DetailViewController.swift"
-            timestampString = "535329743.587462"
+            timestampString = "535408394.57889"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -54,63 +54,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "voxfeed/Controllers/Publications/Detail/DetailViewController.swift"
-            timestampString = "535329743.587513"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "previewActionItems"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "voxfeed.DetailViewController.previewActionItems.getter : Swift.Array&lt;__ObjC.UIPreviewActionItem&gt;"
-                  moduleName = "voxfeed"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iMAC4/Desktop/voxfeed/voxfeed/voxfeed/Controllers/Publications/Detail/DetailViewController.swift"
-                  timestampString = "535326735.073305"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "170"
-                  endingLineNumber = "170"
-                  offsetFromSymbolStart = "628">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (__ObjC.UIPreviewAction, __ObjC.UIViewController) -&gt; () in voxfeed.DetailViewController.previewActionItems.getter : Swift.Array&lt;__ObjC.UIPreviewActionItem&gt;"
-                  moduleName = "voxfeed"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iMAC4/Desktop/voxfeed/voxfeed/voxfeed/Controllers/Publications/Detail/DetailViewController.swift"
-                  timestampString = "535326735.074651"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "171"
-                  endingLineNumber = "171"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voxfeed/Controllers/Publications/PublicationsViewController.swift"
-            timestampString = "535329743.587557"
+            timestampString = "535408394.578945"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "previewingContext(_:viewControllerForLocation:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voxfeed/Controllers/Publications/PublicationsViewController.swift"
-            timestampString = "535329743.587598"
+            timestampString = "535408394.578993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "previewingContext(_:commit:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voxfeed/Controllers/Publications/Detail/DetailViewController.swift"
-            timestampString = "535329743.587638"
+            timestampString = "535408394.579039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
