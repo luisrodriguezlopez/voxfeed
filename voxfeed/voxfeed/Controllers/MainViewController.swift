@@ -29,6 +29,7 @@ class MainViewController: UIViewController , MainNavigationController {
         guard segue.identifier != "toWebView"  else {
             var webView = segue.destination as! WebViewController
             webView.url = sender as! String
+            webView.fromMain = true
             return
         }
         var navController = segue.destination as! UINavigationController
