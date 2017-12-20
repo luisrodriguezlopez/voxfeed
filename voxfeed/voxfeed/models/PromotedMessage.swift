@@ -9,7 +9,41 @@
 import Foundation
 
 
-class PromotedMessage {
+struct PromotedMessage : Equatable {
+    static func ==(lhs: PromotedMessage, rhs: PromotedMessage) -> Bool {
+        if lhs.id != rhs.id {
+            return false
+        }
+        
+        if lhs.date != rhs.date {
+            return false
+        }
+        
+        if lhs.socialNetwork != rhs.socialNetwork {
+            return false
+        }
+//
+//        if lhs.brand != rhs.socialNetwork {
+//            return false
+//        }
+//
+//        if lhs.post != rhs.post {
+//            return false
+//        }
+//
+//        if lhs.campaign != rhs.campaign {
+//            return false
+//        }
+//
+//        if lhs.user != rhs.user {
+//            return false
+//        }
+//        if lhs.stats != rhs.stats {
+//            return false
+//        }
+        return true
+    }
+    
     fileprivate var id = String()
     fileprivate var date = String()
     fileprivate var socialNetwork = String()
@@ -48,5 +82,22 @@ class PromotedMessage {
     func getUser() -> User {return self.user}
     func getEarnings() -> Double { return self.earnings}
     
+    func toDictionary() -> [String : Any] {
+        return [
+            "id" : self.getId(),
+            "date" : self.getDate(),
+            "socialNetwork" : self.getSocialNetwork(),
+            "brand" : self.getBrand(),
+            "post" : self.getPost(),
+            "campaign" : self.getCampaign(),
+            "user" : self.getUser() , 
+            "stats" : self.getStats()
+        ]
+    }
     
+    //    self.post = Post.init(text: postDictionary!["text"] as! String, image: postDictionary!["image"] as! String , link: postDictionary!["link"] as! String)
+    //    self.campaign = Campaign.init(name:  campaignDictionary!["name"] as! String, coverImage: campaignDictionary!["coverImage"] as! String)
+    //    self.user = User.init(username: userDictionary!["username"] as! String, profileImage: userDictionary!["profileImage"] as! String)
+    //    self.stats = Stats.init(likes: statsDictioanry!["likes"] as! Int, shares: statsDictioanry!["shares"] as! Int, clicks: statsDictioanry!["clicks"] as? Int ?? 0, audience: statsDictioanry!["audience"] as! Int, comments: statsDictioanry!["comments"] as! Int)
+    //    self.earnings =  data["earnings"] as? Double ?? 0.0
 }

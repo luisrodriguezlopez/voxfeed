@@ -10,12 +10,14 @@
 		228A6789AE16347D0E791638 /* Pods_voxfeedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7EF784B3528317308B2785 /* Pods_voxfeedUITests.framework */; };
 		275428B24F06ACC3CB9AA72A /* Pods_voxfeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649F7AC5E0F33F3B9C470366 /* Pods_voxfeed.framework */; };
 		692ABBAB1FE438E200A9B918 /* PublicationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692ABBAA1FE438E200A9B918 /* PublicationsPresenter.swift */; };
+		694DE9521FEABE4A00448B75 /* PublicationsDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694DE9511FEABE4A00448B75 /* PublicationsDataProviderTests.swift */; };
+		6998A88C1FEAA8E80079DC0A /* PublicationsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6998A88B1FEAA8E80079DC0A /* PublicationsViewControllerTests.swift */; };
+		6998A88E1FEAAAFD0079DC0A /* PublicationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6998A88D1FEAAAFD0079DC0A /* PublicationDataProvider.swift */; };
 		DAE21078583CAAF94569C6CF /* Pods_voxfeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA582B6C8D0227DDA29D292 /* Pods_voxfeedTests.framework */; };
 		EE802B921FE2402F00CE8E5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE802B911FE2402F00CE8E5E /* AppDelegate.swift */; };
 		EE802B9B1FE2402F00CE8E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE802B991FE2402F00CE8E5E /* Main.storyboard */; };
 		EE802B9D1FE2402F00CE8E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE802B9C1FE2402F00CE8E5E /* Assets.xcassets */; };
 		EE802BA01FE2402F00CE8E5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE802B9E1FE2402F00CE8E5E /* LaunchScreen.storyboard */; };
-		EE802BAB1FE2402F00CE8E5E /* voxfeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE802BAA1FE2402F00CE8E5E /* voxfeedTests.swift */; };
 		EE802BB61FE2402F00CE8E5E /* voxfeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE802BB51FE2402F00CE8E5E /* voxfeedUITests.swift */; };
 		EE802BCA1FE242CD00CE8E5E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE802BC41FE242CC00CE8E5E /* User.swift */; };
 		EE802BCB1FE242CD00CE8E5E /* PromotedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE802BC51FE242CC00CE8E5E /* PromotedMessage.swift */; };
@@ -76,6 +78,9 @@
 		5B7EF784B3528317308B2785 /* Pods_voxfeedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_voxfeedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		649F7AC5E0F33F3B9C470366 /* Pods_voxfeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_voxfeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		692ABBAA1FE438E200A9B918 /* PublicationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationsPresenter.swift; sourceTree = "<group>"; };
+		694DE9511FEABE4A00448B75 /* PublicationsDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PublicationsDataProviderTests.swift; path = ../Publications/PublicationsDataProviderTests.swift; sourceTree = "<group>"; };
+		6998A88B1FEAA8E80079DC0A /* PublicationsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PublicationsViewControllerTests.swift; path = ../Publications/PublicationsViewControllerTests.swift; sourceTree = "<group>"; };
+		6998A88D1FEAAAFD0079DC0A /* PublicationDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationDataProvider.swift; sourceTree = "<group>"; };
 		87A23BC4BA5501B6D8BD7FFA /* Pods-voxfeed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voxfeed.release.xcconfig"; path = "Pods/Target Support Files/Pods-voxfeed/Pods-voxfeed.release.xcconfig"; sourceTree = "<group>"; };
 		A7325ED6C790DF12E33E947E /* Pods-voxfeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voxfeed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-voxfeed/Pods-voxfeed.debug.xcconfig"; sourceTree = "<group>"; };
 		EDA582B6C8D0227DDA29D292 /* Pods_voxfeedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_voxfeedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +91,6 @@
 		EE802B9F1FE2402F00CE8E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE802BA11FE2402F00CE8E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE802BA61FE2402F00CE8E5E /* voxfeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = voxfeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE802BAA1FE2402F00CE8E5E /* voxfeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voxfeedTests.swift; sourceTree = "<group>"; };
 		EE802BAC1FE2402F00CE8E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE802BB11FE2402F00CE8E5E /* voxfeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = voxfeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE802BB51FE2402F00CE8E5E /* voxfeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voxfeedUITests.swift; sourceTree = "<group>"; };
@@ -165,6 +169,16 @@
 			path = Presenters;
 			sourceTree = "<group>";
 		};
+		6998A88A1FEAA85A0079DC0A /* Publications */ = {
+			isa = PBXGroup;
+			children = (
+				6998A88B1FEAA8E80079DC0A /* PublicationsViewControllerTests.swift */,
+				694DE9511FEABE4A00448B75 /* PublicationsDataProviderTests.swift */,
+			);
+			name = Publications;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		DB9D0D8E197687BA6F11E507 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,7 +235,7 @@
 		EE802BA91FE2402F00CE8E5E /* voxfeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				EE802BAA1FE2402F00CE8E5E /* voxfeedTests.swift */,
+				6998A88A1FEAA85A0079DC0A /* Publications */,
 				EE802BAC1FE2402F00CE8E5E /* Info.plist */,
 			);
 			path = voxfeedTests;
@@ -308,6 +322,7 @@
 			children = (
 				EECBDC121FE5F7CF002A66D7 /* Detail */,
 				EEB3EFF81FE38B200005E50B /* PublicationsViewController.swift */,
+				6998A88D1FEAAAFD0079DC0A /* PublicationDataProvider.swift */,
 			);
 			path = Publications;
 			sourceTree = "<group>";
@@ -403,6 +418,7 @@
 					};
 					EE802BA51FE2402F00CE8E5E = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						TestTargetID = EE802B8D1FE2402F00CE8E5E;
 					};
@@ -620,6 +636,7 @@
 				EE802BCC1FE242CD00CE8E5E /* Stats.swift in Sources */,
 				EEA811C21FE779580049047E /* Utils.swift in Sources */,
 				EE802BCB1FE242CD00CE8E5E /* PromotedMessage.swift in Sources */,
+				6998A88E1FEAAAFD0079DC0A /* PublicationDataProvider.swift in Sources */,
 				EE802BCE1FE242CD00CE8E5E /* Post.swift in Sources */,
 				EEA811BF1FE7707D0049047E /* colorExtension.swift in Sources */,
 				EE802BCA1FE242CD00CE8E5E /* User.swift in Sources */,
@@ -633,7 +650,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE802BAB1FE2402F00CE8E5E /* voxfeedTests.swift in Sources */,
+				6998A88C1FEAA8E80079DC0A /* PublicationsViewControllerTests.swift in Sources */,
+				694DE9521FEABE4A00448B75 /* PublicationsDataProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -825,12 +843,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V99PUP45YW;
 				INFOPLIST_FILE = voxfeedTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Luis.Rodriguez.voxfeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/voxfeed.app/voxfeed";
@@ -843,6 +863,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V99PUP45YW;
 				INFOPLIST_FILE = voxfeedTests/Info.plist;

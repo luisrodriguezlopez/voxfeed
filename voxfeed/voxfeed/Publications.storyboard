@@ -30,13 +30,12 @@
         <!--Publications View Controller-->
         <scene sceneID="i1Z-6h-05B">
             <objects>
-                <tableViewController id="2OA-7H-dr2" customClass="PublicationsViewController" customModule="voxfeed" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="publicationsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2OA-7H-dr2" customClass="PublicationsViewController" customModule="voxfeed" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xAU-jm-yVG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
-                            <outlet property="dataSource" destination="2OA-7H-dr2" id="yNh-wI-Luv"/>
                             <outlet property="delegate" destination="2OA-7H-dr2" id="Cjz-fz-rrk"/>
                         </connections>
                     </tableView>
@@ -44,10 +43,12 @@
                         <barButtonItem key="backBarButtonItem" title="Atrás" id="irn-Sg-aO3"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="dataProvider" destination="f9b-ge-WG5" id="YNl-Yk-5DG"/>
                         <segue destination="P3M-dL-WSL" kind="show" identifier="toDetailVC" id="A5r-hp-QmQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZo-ME-MZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="f9b-ge-WG5" customClass="PublicationDataProvider" customModule="voxfeed" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="215" y="63"/>
         </scene>

@@ -14,6 +14,7 @@ import RxCocoa
 
 class PublicationsViewController: UITableViewController, UIViewControllerPreviewingDelegate {
     
+    @IBOutlet var dataProvider:  (UITableViewDataSource & UITableViewDelegate)!
     var model : [PromotedMessage] = [PromotedMessage]()
     var imagesDictionary : [NSDictionary]!
     var presenter : PublicationsPresenter!
@@ -21,6 +22,7 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
     var obsevableModel : Observable<PromotedMessage>!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.dataSource = self.dataProvider
         if( traitCollection.forceTouchCapability == .available){
             
             registerForPreviewing(with: self, sourceView: view)
@@ -33,7 +35,8 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
         self.navigationController?.navigationBar.isHidden = true
-        
+        self.tableView.delegate = self.dataProvider
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

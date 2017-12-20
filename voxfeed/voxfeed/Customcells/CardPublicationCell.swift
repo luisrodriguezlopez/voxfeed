@@ -27,6 +27,8 @@ class CardPublicationCell: UITableViewCell {
     }
     
     func configCell(imagesDictionary : [NSDictionary]!, currentPublication : PromotedMessage) -> CardPublicationCell {
+        print(currentPublication.getDate())
+        print( Utils.formatingDateToShort(stringDate: currentPublication.getDate()))
         self.lblDate.text = Utils.formatingDateToShort(stringDate: currentPublication.getDate())
         self.lblSocialNetwork.textColor = Utils.getColorForSocialNetowrk(socialNetwork: currentPublication.getSocialNetwork())
         self.lblUsername.text = currentPublication.getUser().getUsername()
