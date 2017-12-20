@@ -14,7 +14,7 @@ import RxCocoa
 
 class PublicationsViewController: UITableViewController, UIViewControllerPreviewingDelegate {
     
-    @IBOutlet var dataProvider:  (UITableViewDataSource & UITableViewDelegate)!
+    @IBOutlet var dataProvider:  (UITableViewDataSource & UITableViewDelegate & PublicationDataProvider)!
     var model : [PromotedMessage] = [PromotedMessage]()
     var imagesDictionary : [NSDictionary]!
     var presenter : PublicationsPresenter!
@@ -23,6 +23,9 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self.dataProvider
+        /** test
+        self.dataProvider.model = self.model
+        */
         if( traitCollection.forceTouchCapability == .available){
             
             registerForPreviewing(with: self, sourceView: view)
@@ -35,8 +38,9 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
         self.navigationController?.navigationBar.isHidden = true
+        /**
         self.tableView.delegate = self.dataProvider
-
+        */
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,6 +110,10 @@ extension PublicationsViewController : PublicationsView {
     func successRetrivePublications(publications: [PromotedMessage], images : [NSDictionary]) {
         self.model = publications
         self.imagesDictionary = images
+        /** test
+        self.dataProvider.model = publications
+        self.dataProvider.imagesDictionary = images
+        */
         self.tableView.reloadData()
     }
     func showError() {

@@ -78,8 +78,8 @@
 		5B7EF784B3528317308B2785 /* Pods_voxfeedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_voxfeedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		649F7AC5E0F33F3B9C470366 /* Pods_voxfeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_voxfeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		692ABBAA1FE438E200A9B918 /* PublicationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationsPresenter.swift; sourceTree = "<group>"; };
-		694DE9511FEABE4A00448B75 /* PublicationsDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PublicationsDataProviderTests.swift; path = ../Publications/PublicationsDataProviderTests.swift; sourceTree = "<group>"; };
-		6998A88B1FEAA8E80079DC0A /* PublicationsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PublicationsViewControllerTests.swift; path = ../Publications/PublicationsViewControllerTests.swift; sourceTree = "<group>"; };
+		694DE9511FEABE4A00448B75 /* PublicationsDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationsDataProviderTests.swift; sourceTree = "<group>"; };
+		6998A88B1FEAA8E80079DC0A /* PublicationsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationsViewControllerTests.swift; sourceTree = "<group>"; };
 		6998A88D1FEAAAFD0079DC0A /* PublicationDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationDataProvider.swift; sourceTree = "<group>"; };
 		87A23BC4BA5501B6D8BD7FFA /* Pods-voxfeed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voxfeed.release.xcconfig"; path = "Pods/Target Support Files/Pods-voxfeed/Pods-voxfeed.release.xcconfig"; sourceTree = "<group>"; };
 		A7325ED6C790DF12E33E947E /* Pods-voxfeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voxfeed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-voxfeed/Pods-voxfeed.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,8 +175,7 @@
 				6998A88B1FEAA8E80079DC0A /* PublicationsViewControllerTests.swift */,
 				694DE9511FEABE4A00448B75 /* PublicationsDataProviderTests.swift */,
 			);
-			name = Publications;
-			path = "New Group";
+			path = Publications;
 			sourceTree = "<group>";
 		};
 		DB9D0D8E197687BA6F11E507 /* Frameworks */ = {
@@ -811,6 +810,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = V99PUP45YW;
 				INFOPLIST_FILE = voxfeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -827,6 +827,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = V99PUP45YW;
 				INFOPLIST_FILE = voxfeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -10,6 +10,8 @@ import UIKit
 
 class PublicationDataProvider: NSObject , UITableViewDataSource {
     var model : [PromotedMessage]? = [PromotedMessage]()
+    var imagesDictionary : [NSDictionary]!
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -23,9 +25,8 @@ class PublicationDataProvider: NSObject , UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "CardPublicationCell",
             for: indexPath) as! CardPublicationCell
-            let dictionary = [["id" : "1" , "image" : #imageLiteral(resourceName: "ground-shape")]]
         
-        return cell.configCell(imagesDictionary: dictionary as [NSDictionary], currentPublication: self.model![indexPath.row])
+        return cell.configCell(imagesDictionary:  imagesDictionary, currentPublication: self.model![indexPath.row])
     }
     
 
