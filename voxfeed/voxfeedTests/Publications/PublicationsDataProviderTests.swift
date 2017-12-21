@@ -15,7 +15,7 @@ class PublicationsDataProviderTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        self.tableView = MockTableView()
+        self.tableView = MockPublicationView()
         self.tableView.dataSource = sut
     }
     
@@ -42,7 +42,7 @@ class PublicationsDataProviderTests: XCTestCase {
     }
     
     func test_CellForRow_DequeuesCellFromTableView() {
-        let mockTableView = MockTableView.mockTableView(withDataSource: sut)
+        let mockTableView = MockPublicationView.mockTableView(withDataSource: sut)
         mockTableView.dataSource = sut
         mockTableView.register(MockItemCell.self,
                                forCellReuseIdentifier: "CardPublicationCell")
@@ -58,7 +58,7 @@ class PublicationsDataProviderTests: XCTestCase {
     }
     
     func test_CellForRow_CallsConfigCell() {
-        let mockTableView = MockTableView.mockTableView(withDataSource: sut)
+        let mockTableView = MockPublicationView.mockTableView(withDataSource: sut)
         mockTableView.dataSource = sut
         let promotedMessage : PromotedMessage = PromotedMessage.init(data: prmomotedMessages as NSDictionary)
         sut.model = [promotedMessage]
@@ -73,23 +73,12 @@ class PublicationsDataProviderTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+
     
 }
 
 extension PublicationsDataProviderTests {
-    class MockTableView : UITableView {
+    class MockPublicationView : UITableView {
         var cellGotDequeued = false
         
         
@@ -99,8 +88,8 @@ extension PublicationsDataProviderTests {
             return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         }
         
-        class func mockTableView(withDataSource dataSource: UITableViewDataSource) -> MockTableView {
-            let mockTableView = MockTableView()
+        class func mockTableView(withDataSource dataSource: UITableViewDataSource) -> MockPublicationView {
+            let mockTableView = MockPublicationView()
             mockTableView.dataSource = dataSource
             mockTableView.register(MockItemCell.self, forCellReuseIdentifier: "CardPublicationCell")
             return mockTableView

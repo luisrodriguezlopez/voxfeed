@@ -16,7 +16,6 @@ class PublicationDataProvider: NSObject , UITableViewDataSource {
         return 1
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.model!.count ?? 0
     }

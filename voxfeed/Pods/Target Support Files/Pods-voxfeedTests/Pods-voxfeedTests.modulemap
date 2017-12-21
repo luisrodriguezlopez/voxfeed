@@ -1,6 +1,0 @@
-framework module Pods_voxfeedTests {
-  umbrella header "Pods-voxfeedTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -77,7 +77,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="560"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="P3M-dL-WSL" id="eVH-UC-aDh"/>
+                                    <outlet property="dataSource" destination="tdu-Qd-xmP" id="o6T-Q5-QX3"/>
                                     <outlet property="delegate" destination="P3M-dL-WSL" id="txW-Cl-KS8"/>
                                 </connections>
                             </tableView>
@@ -95,12 +95,14 @@
                         <viewLayoutGuide key="safeArea" id="mSt-Tm-5Mf"/>
                     </view>
                     <connections>
+                        <outlet property="dataProvider" destination="tdu-Qd-xmP" id="GJD-dO-dq7"/>
                         <outlet property="footerButton" destination="Qij-cf-Lgh" id="Zsj-tH-Oad"/>
                         <outlet property="tableView" destination="7jZ-0k-sWr" id="gWg-sf-09p"/>
                         <segue destination="Uoe-Lc-2cT" kind="presentation" identifier="toWebView" id="lzz-iu-NUV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7H-J4-u3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="tdu-Qd-xmP" customClass="DetailDataProvider" customModule="voxfeed" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1040.8" y="59.820089955022496"/>
         </scene>

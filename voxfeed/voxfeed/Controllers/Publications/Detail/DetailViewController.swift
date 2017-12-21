@@ -15,19 +15,21 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var isGoingToWeb = false
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var footerButton: UIButton!
+    @IBOutlet var dataProvider:  (UITableViewDataSource & UITableViewDelegate & DetailDataProvider)!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.dataSource = dataProvider
         footerButton.setTitle("Ver publicación en \(promotedMessage.getSocialNetwork())", for: .normal)
         footerButton.backgroundColor = Utils.getColorForSocialNetowrk(socialNetwork: promotedMessage.getSocialNetwork())
 
         let headerCell = UINib(nibName: "HeaderImage", bundle: nil)
         let statsCell = UINib(nibName: "StatsCell", bundle: nil)
-        let footer = UINib(nibName: "FooterButton", bundle: nil)
         self.tableView.register(headerCell, forCellReuseIdentifier: "headerCell")
         self.tableView.register(statsCell, forCellReuseIdentifier: "statsCell")
-        
+        self.tableView.delegate = dataProvider
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -79,60 +81,16 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var cell : StatsViewCell!
         switch indexPath.section {
         case 0:   header = tableView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as! HeaderImageDetail
-            header.campaignImage.sd_setImage(with: URL.init(string: promotedMessage.getCampaign().getCoverImage()), completed: { (image, error, option, url) in
-                header.campaignImage.image = image
-                header.brandName.text = self.promotedMessage.getBrand().getName()
-                header.campaingName.text = self.promotedMessage.getCampaign().getName()
-                header.lblEarnings.text = "$\(self.promotedMessage.getEarnings()) USD"
-                header.brandImage.sd_setImage(with: URL.init(string: self.promotedMessage.getBrand().getLogo()), completed: { (image, error, option, url) in
-                    header.brandImage.image = image
-                })
-        })
+                  header.configCell(promotedMessage: self.promotedMessage)
             return header
             
         default:
             cell = tableView.dequeueReusableCell(withIdentifier: "statsCell", for: indexPath) as! StatsViewCell
-            
-            return self.configCell(indexPath: indexPath, cell: cell, stats: promotedMessage.getStats())
+            return cell.configCell(indexPath: indexPath, cell: cell, stats: promotedMessage.getStats())
         }
     }
     
-    func configCell(indexPath : IndexPath,cell : StatsViewCell, stats : Stats) -> UITableViewCell {
-    
-        switch indexPath.row {
-        case 0:
-            cell.lblStats.text = "Me gusta"
-            cell.lblNumStats.text = String(stats.getLikes())
-            cell.icon.image = #imageLiteral(resourceName: "icon-likes")
-        case 1:
-            cell.lblStats.text = "Comentarios"
-            cell.lblNumStats.text = String(stats.getCommets())
-            cell.icon.image = #imageLiteral(resourceName: "icon-comments")
-
-
-        case 2:
-            cell.lblStats.text = "Compartido"
-            cell.lblNumStats.text = String(stats.getShares())
-            cell.icon.image = #imageLiteral(resourceName: "icon-share")
-
-
-
-        case 3:
-            cell.lblStats.text = "Audiencia"
-            cell.lblNumStats.text = String(stats.getAudience())
-            cell.icon.image = #imageLiteral(resourceName: "icon-audience")
-
-
-
-            
-        default:
-            cell.lblStats.text = "Clics"
-            cell.lblNumStats.text = String(stats.getClicks())
-            cell.icon.image = #imageLiteral(resourceName: "icon-clicks")
-
-        }
-        return cell
-    }
+ 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
