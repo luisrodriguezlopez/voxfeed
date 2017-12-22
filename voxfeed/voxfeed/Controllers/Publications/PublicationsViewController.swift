@@ -24,8 +24,8 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
         super.viewDidLoad()
         self.tableView.dataSource = self.dataProvider
         /** test
+         self.dataProvider.model = self.model
         */
-        self.dataProvider.model = self.model
 
         if( traitCollection.forceTouchCapability == .available){
             
@@ -40,8 +40,8 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
         self.navigationController?.navigationBar.isHidden = true
         /**
+         self.tableView.delegate = self.dataProvider
         */
-        self.tableView.delegate = self.dataProvider
 
     }
     

@@ -19,6 +19,8 @@
 		69D5C7EB1FEC1C2B00E539D7 /* DetailDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5C7EA1FEC1C2B00E539D7 /* DetailDataProvider.swift */; };
 		7C56AF0C2EC2219AE83BEF43 /* Pods_voxfeed_voxfeedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E9EA4BED959B7CA31B9A6E /* Pods_voxfeed_voxfeedUITests.framework */; };
 		DAE21078583CAAF94569C6CF /* Pods_voxfeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA582B6C8D0227DDA29D292 /* Pods_voxfeedTests.framework */; };
+		EE6303571FECBB67008032F6 /* Pods_voxfeed_voxfeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6303581FECBB67008032F6 /* Pods_voxfeed_voxfeedTests.framework */; };
+		EE6303591FECBB6D008032F6 /* Pods_voxfeed_voxfeedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE63035A1FECBB6D008032F6 /* Pods_voxfeed_voxfeedUITests.framework */; };
 		EE802B921FE2402F00CE8E5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE802B911FE2402F00CE8E5E /* AppDelegate.swift */; };
 		EE802B9B1FE2402F00CE8E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE802B991FE2402F00CE8E5E /* Main.storyboard */; };
 		EE802B9D1FE2402F00CE8E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE802B9C1FE2402F00CE8E5E /* Assets.xcassets */; };
@@ -98,6 +100,8 @@
 		A7325ED6C790DF12E33E947E /* Pods-voxfeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voxfeed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-voxfeed/Pods-voxfeed.debug.xcconfig"; sourceTree = "<group>"; };
 		C348A7D45DE338FF70CC6D5F /* Pods-voxfeed-voxfeedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-voxfeed-voxfeedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-voxfeed-voxfeedTests/Pods-voxfeed-voxfeedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDA582B6C8D0227DDA29D292 /* Pods_voxfeedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_voxfeedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE6303581FECBB67008032F6 /* Pods_voxfeed_voxfeedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_voxfeed_voxfeedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE63035A1FECBB6D008032F6 /* Pods_voxfeed_voxfeedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_voxfeed_voxfeedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE802B8E1FE2402F00CE8E5E /* voxfeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = voxfeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE802B911FE2402F00CE8E5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE802B9A1FE2402F00CE8E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE6303591FECBB6D008032F6 /* Pods_voxfeed_voxfeedUITests.framework in Frameworks */,
+				EE6303571FECBB67008032F6 /* Pods_voxfeed_voxfeedTests.framework in Frameworks */,
 				275428B24F06ACC3CB9AA72A /* Pods_voxfeed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +217,8 @@
 		DB9D0D8E197687BA6F11E507 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EE63035A1FECBB6D008032F6 /* Pods_voxfeed_voxfeedUITests.framework */,
+				EE6303581FECBB67008032F6 /* Pods_voxfeed_voxfeedTests.framework */,
 				649F7AC5E0F33F3B9C470366 /* Pods_voxfeed.framework */,
 				EDA582B6C8D0227DDA29D292 /* Pods_voxfeedTests.framework */,
 				5B7EF784B3528317308B2785 /* Pods_voxfeedUITests.framework */,
@@ -541,7 +549,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		1A1287FA34FC7DF925857B7F /* [CP] Embed Pods Frameworks */ = {
@@ -571,7 +579,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-voxfeed-voxfeedUITests/Pods-voxfeed-voxfeedUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-voxfeedUITests/Pods-voxfeedUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		353A6082D98A2E5E1C658465 /* [CP] Check Pods Manifest.lock */ = {
@@ -586,7 +594,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BB322BC88BFC4AB1167EA1BE /* [CP] Embed Pods Frameworks */ = {
@@ -601,7 +609,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-voxfeed-voxfeedUITests/Pods-voxfeed-voxfeedUITests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-voxfeedUITests/Pods-voxfeedUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C837A7055BD5D570A0451712 /* [CP] Copy Pods Resources */ = {
@@ -616,7 +624,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-voxfeed-voxfeedTests/Pods-voxfeed-voxfeedTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-voxfeedTests/Pods-voxfeedTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E59E562D0584BAA0BA30F46E /* [CP] Check Pods Manifest.lock */ = {
@@ -631,7 +639,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FBE2CB467B5EB051E6065BF6 /* [CP] Embed Pods Frameworks */ = {
@@ -646,7 +654,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-voxfeed-voxfeedTests/Pods-voxfeed-voxfeedTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-voxfeedTests/Pods-voxfeedTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -849,6 +857,7 @@
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = V99PUP45YW;
 				INFOPLIST_FILE = voxfeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Luis.Rodriguez.voxfeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -866,6 +875,7 @@
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = V99PUP45YW;
 				INFOPLIST_FILE = voxfeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Luis.Rodriguez.voxfeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -876,9 +886,9 @@
 		};
 		EE802BBE1FE2402F00CE8E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C348A7D45DE338FF70CC6D5F /* Pods-voxfeed-voxfeedTests.debug.xcconfig */;
+			baseConfigurationReference = F0E212AE1DCCEB69B20D37F8 /* Pods-voxfeedTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -896,9 +906,9 @@
 		};
 		EE802BBF1FE2402F00CE8E5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 189CF8C182C8D0E1E8D5B920 /* Pods-voxfeed-voxfeedTests.release.xcconfig */;
+			baseConfigurationReference = FC295E7A0788D4973D47284D /* Pods-voxfeedTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -915,9 +925,9 @@
 		};
 		EE802BC11FE2402F00CE8E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40719199D9F63E224F6127A4 /* Pods-voxfeed-voxfeedUITests.debug.xcconfig */;
+			baseConfigurationReference = 0C8B933CA3069CCE97B852EC /* Pods-voxfeedUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V99PUP45YW;
 				INFOPLIST_FILE = voxfeedUITests/Info.plist;
@@ -932,9 +942,9 @@
 		};
 		EE802BC21FE2402F00CE8E5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7684C0843554202905BAB59D /* Pods-voxfeed-voxfeedUITests.release.xcconfig */;
+			baseConfigurationReference = 170D71D6F3DB49890E885109 /* Pods-voxfeedUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V99PUP45YW;
 				INFOPLIST_FILE = voxfeedUITests/Info.plist;

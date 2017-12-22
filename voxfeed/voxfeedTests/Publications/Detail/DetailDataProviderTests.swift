@@ -39,18 +39,18 @@ class DetailDataProviderTests: XCTestCase {
         XCTAssertTrue(cell is HeaderImageDetail)
     }
     
-    func test_CellForRow_ReturnsStatsViewCell() {
-        let promotedMessage : PromotedMessage = PromotedMessage.init(data: promotedMessages as NSDictionary)
-        sut.promotedMessage = promotedMessage
-        tableView.dataSource  = sut
-        tableView.reloadData()
-
-        tableView.register(MockStatCell.self,
-                           forCellReuseIdentifier: "statsCell")
-        let cell1 = tableView.cellForRow(at: IndexPath(row: 0, section: 1))
+//    func test_CellForRow_ReturnsStatsViewCell() {
+//        let promotedMessage : PromotedMessage = PromotedMessage.init(data: promotedMessages as NSDictionary)
+//        sut.promotedMessage = promotedMessage
+//        tableView.dataSource  = sut
+//        tableView.reloadData()
+//
+//        tableView.register(MockStatCell.self,
+//                           forCellReuseIdentifier: "statsCell")
+//        let cell1 = tableView.cellForRow(at: IndexPath(row: 0, section: 1))
 //        XCTAssertEqual(self.tableView.numberOfRows(inSection: 0) , 1)
 //        XCTAssertEqual(self.tableView.numberOfRows(inSection: 1) , 5)
-        XCTAssertNotNil(cell1)
+//        XCTAssertNotNil(cell1)
 //        XCTAssertTrue(cell1 is StatsViewCell)
 
     }
