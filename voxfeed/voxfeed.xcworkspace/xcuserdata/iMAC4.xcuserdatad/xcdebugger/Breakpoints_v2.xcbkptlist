@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voxfeed/Controllers/Publications/Detail/DetailDataProvider.swift"
-            timestampString = "535591167.235207"
+            timestampString = "535675896.208263"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voxfeed/Controllers/Publications/Detail/DetailDataProvider.swift"
-            timestampString = "535591167.235283"
+            timestampString = "535675896.208352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voxfeed/Controllers/Publications/Detail/DetailDataProvider.swift"
-            timestampString = "535591167.235354"
+            timestampString = "535675896.208427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -90,45 +90,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voxfeedTests/Publications/PublicationsDataProviderTests.swift"
-            timestampString = "535591167.235409"
+            timestampString = "535675896.208485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
             landmarkName = "test_CellForRow_ReturnsItemCell()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "voxfeedTests.PublicationsDataProviderTests.test_CellForRow_ReturnsItemCell() -&gt; ()"
-                  moduleName = "voxfeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iMAC4/Desktop/voxfeed/voxfeed/voxfeedTests/Publications/PublicationsDataProviderTests.swift"
-                  timestampString = "535590758.966151"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "2229">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.Bool in voxfeedTests.PublicationsDataProviderTests.test_CellForRow_ReturnsItemCell() -&gt; ()"
-                  moduleName = "voxfeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iMAC4/Desktop/voxfeed/voxfeed/voxfeedTests/Publications/PublicationsDataProviderTests.swift"
-                  timestampString = "535590758.967979"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "30">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -138,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voxfeed/Controllers/Publications/Detail/DetailDataProvider.swift"
-            timestampString = "535591167.235453"
+            timestampString = "535675896.208529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -154,12 +122,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voxfeed/Controllers/Publications/Detail/DetailDataProvider.swift"
-            timestampString = "535591167.235501"
+            timestampString = "535675896.208577"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "voxfeed/Presenters/PublicationsPresenter.swift"
+            timestampString = "535675896.208626"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "rx_retriveImages(promotedMessages:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
