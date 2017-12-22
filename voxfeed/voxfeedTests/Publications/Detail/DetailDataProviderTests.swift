@@ -52,8 +52,7 @@ class DetailDataProviderTests: XCTestCase {
 //        XCTAssertEqual(self.tableView.numberOfRows(inSection: 1) , 5)
 //        XCTAssertNotNil(cell1)
 //        XCTAssertTrue(cell1 is StatsViewCell)
-
-    }
+//    }
 
 //    func test_CellForRow_DequeuesCellFromTableView() {
 //        let mockDetailView = MockDetailView.mockDetailView(withDataSource: sut)

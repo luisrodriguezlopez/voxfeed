@@ -5,6 +5,10 @@ def pods_default
     pod 'RxSwift',    '~> 4.0'
     pod 'RxCocoa',    '~> 4.0'
     pod 'SDWebImage', '~> 4.0'
+    pod 'Moya-ModelMapper/RxSwift'
+    pod 'Moya/RxSwift'
+
+    pod 'RxOptional'
 end
 
 target 'voxfeed' do

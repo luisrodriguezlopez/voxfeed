@@ -22,7 +22,6 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
     var obsevableModel : Observable<PromotedMessage>!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.dataSource = self.dataProvider
         /** test
          self.dataProvider.model = self.model
         */

@@ -19,8 +19,6 @@
 		69D5C7EB1FEC1C2B00E539D7 /* DetailDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5C7EA1FEC1C2B00E539D7 /* DetailDataProvider.swift */; };
 		7C56AF0C2EC2219AE83BEF43 /* Pods_voxfeed_voxfeedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E9EA4BED959B7CA31B9A6E /* Pods_voxfeed_voxfeedUITests.framework */; };
 		DAE21078583CAAF94569C6CF /* Pods_voxfeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA582B6C8D0227DDA29D292 /* Pods_voxfeedTests.framework */; };
-		EE6303571FECBB67008032F6 /* Pods_voxfeed_voxfeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6303581FECBB67008032F6 /* Pods_voxfeed_voxfeedTests.framework */; };
-		EE6303591FECBB6D008032F6 /* Pods_voxfeed_voxfeedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE63035A1FECBB6D008032F6 /* Pods_voxfeed_voxfeedUITests.framework */; };
 		EE802B921FE2402F00CE8E5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE802B911FE2402F00CE8E5E /* AppDelegate.swift */; };
 		EE802B9B1FE2402F00CE8E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE802B991FE2402F00CE8E5E /* Main.storyboard */; };
 		EE802B9D1FE2402F00CE8E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE802B9C1FE2402F00CE8E5E /* Assets.xcassets */; };
@@ -143,8 +141,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE6303591FECBB6D008032F6 /* Pods_voxfeed_voxfeedUITests.framework in Frameworks */,
-				EE6303571FECBB67008032F6 /* Pods_voxfeed_voxfeedTests.framework in Frameworks */,
 				275428B24F06ACC3CB9AA72A /* Pods_voxfeed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
