@@ -33,47 +33,17 @@ class PublicationsPresenter : PublicationsProtocol{
     }
     
     func retrivePublications() {
-        var observableImages : Observable<[NSDictionary]>!
         let observablePublications = self.rx_getPublications()
         observablePublications.subscribe(onNext: { (response) in
-            print(response)
         
             }, onError: { (error) in
-                print(error)
+                self.view.showError()
             }, onCompleted: {
-//             self.rx_retriveImages(promotedMessages: self.model).bind(onNext: { (image) in
-//                    print(image)
-//            })
-//                observableImages.subscribe { (imagesDictionary) in
-//                    print(imagesDictionary)
-//                }
-
-
-            }) {
-        
-        }
-//        let observableImages = self.rx_getImages()
-//        
-//        observableImages.subscribe(onNext: { (response) in
-//            
-//            print(response)
-//        }, onError: { (error) in
-//            print(error)
-//        }, onCompleted: {
-//            print("complet")
-//        }) {
-//            
-//        }
-            //        VoxfeedAPI().retrivePublications(success: { (response) in
-//           self.model =  response.map({ (dictionary) -> PromotedMessage in
-//                return PromotedMessage.init(data : dictionary as! NSDictionary)
-//            })
-//            self.retriveImages(model: self.model, success: { (images) in
-//                self.view.successRetrivePublications(publications: self.model, images : images)
-//            })
-//        }) { (error) in
-//            self.view.showError()
-//        }
+             self.rx_retriveImages(promotedMessages: self.model).bind(onNext: { (images) in
+                   self.view.successRetrivePublications(publications: self.model, images: images)
+             })
+                
+            })
     }
 
     
@@ -91,7 +61,6 @@ class PublicationsPresenter : PublicationsProtocol{
                     return PromotedMessage.init(data : dictionary as! NSDictionary)
                     
                 })
-                observe.onNext(self.model)
                 observe.onCompleted()
             })
         return Disposables.create { request.cancel() }
@@ -115,16 +84,6 @@ class PublicationsPresenter : PublicationsProtocol{
             })
         }
     }
-
-//    func rx_getImages() -> Observable<[UIImage]> {
-//        return Observable.create({ (observe) -> Disposable in
-//
-//
-//
-//            return Disposables.create {  }
-//        })
-//    }
-    
     
     func retriveImage(promotedMessage : PromotedMessage , success : @escaping (_ image : UIImage) ->()) {
         let manager = SDWebImageManager()
@@ -136,46 +95,35 @@ class PublicationsPresenter : PublicationsProtocol{
         })
     }
     
-//    func rx_retriveImages(promotedMessages : [PromotedMessage]) -> Observable<[UIImage]> {
-//        var imagesArray : [UIImage]!
-//        let manager = SDWebImageManager()
-//        let observableArray : Observable<[UIImage]>!
-//        var observerdictionary : Observable<NSDictionary>!
-//        var imagesSecuente : Observable<[UIImage]>!
-//      return Observable.create ({ (observeFinish)  in
-//       Observable<PromotedMessage>.from(promotedMessages).map { (promotedMessageItem) -> String  in
-//            return promotedMessageItem.getPost().getImage()
-//            }.map { (urlImage) -> Observable<UIImage> in
-//                return Observable.create ({ (observe)  in
-//                let manager = SDWebImageManager()
-//                manager.imageDownloader?.downloadImage(with: URL.init(string:urlImage), options: SDWebImageDownloaderOptions.continueInBackground, progress: nil,
-//                        completed: { (image, data, error, complete) in
-//                        guard error == nil else {
-//                            return
-//                        }
-//                        return observe.onNext(image!)
-//                })
-//                 return Disposables.create {  }
-//                })
-//        }.bind(onNext: { (observableImage) in
-//                    observableImage.bind(onNext: finalImage)
-//                    imagesArray.append(finalImage)
-//                    if imagesArray.count == promotedMessages.count {
-//                        imagesSecuente = Observable.from(optional: imagesArray)
-//                    }
-//                }).dispose()
-//
-//        })
-//
-//        imagesSecuente.subscribe { (eventImage) in
-//            switch eventImage {
-//                case .completed : observeFinish.onNext(imagesArray)
-//                case .error : return
-//            case .next(_):
-//                print("next")
-//            }
-//        } return Disposables.create {  }
-//
-//    }
+    func rx_retriveImages(promotedMessages : [PromotedMessage]) -> Observable<[NSDictionary]> {
+        var imagesArray : [NSDictionary]! = []
+        let manager = SDWebImageManager()
+        return Observable.create ({ (observeFinish)  in
+               Observable<PromotedMessage>.from(promotedMessages).map { (promotedMessageItem) -> NSDictionary!  in
+                return  ["id" : promotedMessageItem.getId(), "image" : promotedMessageItem.getPost().getImage()]
+                }.map { (urlImage) -> Observable<NSDictionary> in
+                        return Observable.create ({ (observe)  in
+                            manager.imageDownloader?.downloadImage(with: URL.init(string: urlImage.object(forKey: "image") as! String ), options: SDWebImageDownloaderOptions.continueInBackground, progress: nil,
+                                completed: { (image, data, error, complete) in
+                                guard error == nil else {
+                                    return
+                                }
+                                var dictionary = NSDictionary()
+                                dictionary = ["id" :  urlImage.object(forKey: "id") as! String, "image" : image]
+                                return observe.onNext(dictionary)
+                        })
+                         return Disposables.create {  }
+                        })
+                }.bind(onNext: { (observableImage) in
+                    observableImage.bind(onNext: { (finalImage) in
+                        imagesArray.append(finalImage)
+                        if imagesArray.count == promotedMessages.count {
+                            observeFinish.onNext(imagesArray)
+            
+                        }
+                    })
+                })
+        
+      })
+    }
 }
-

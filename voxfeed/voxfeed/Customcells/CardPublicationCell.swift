@@ -26,6 +26,15 @@ class CardPublicationCell: UITableViewCell {
         self.imagePost.reloadInputViews()
     }
     
+    func configCellEmpty() -> CardPublicationCell {
+        self.lblDate.backgroundColor = UIColor.groupTableViewBackground
+        self.lblSocialNetwork.backgroundColor = UIColor.groupTableViewBackground
+        self.lblUsername.backgroundColor = UIColor.groupTableViewBackground
+        self.lblSocialNetwork.backgroundColor = UIColor.groupTableViewBackground
+        self.txtPost.backgroundColor = UIColor.groupTableViewBackground
+        self.imagePost.backgroundColor = UIColor.groupTableViewBackground
+        return self
+    }
     func configCell(imagesDictionary : [NSDictionary]!, currentPublication : PromotedMessage) -> CardPublicationCell {
         self.lblDate.text = Utils.formatingDateToShort(stringDate: currentPublication.getDate())
         self.lblSocialNetwork.textColor = Utils.getColorForSocialNetowrk(socialNetwork: currentPublication.getSocialNetwork())

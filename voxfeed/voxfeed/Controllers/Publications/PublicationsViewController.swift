@@ -54,11 +54,12 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.model.count
+        return self.model.count > 0 ?  self.model.count : 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard self.model.count > 0 else {
+            self.tableView.rowHeight = self.tableView.frame.height
             return UITableViewCell()
         }
         let currentPublication = self.model[indexPath.row] as PromotedMessage
@@ -111,6 +112,7 @@ extension PublicationsViewController : PublicationsView {
     func successRetrivePublications(publications: [PromotedMessage], images : [NSDictionary]) {
         self.model = publications
         self.imagesDictionary = images
+        self.mainDelegate.hideActivityIndicator()
         /** test
         self.dataProvider.model = publications
         self.dataProvider.imagesDictionary = images
@@ -118,6 +120,6 @@ extension PublicationsViewController : PublicationsView {
         self.tableView.reloadData()
     }
     func showError() {
-        
+        self.mainDelegate.retry()
     }
 }

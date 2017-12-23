@@ -12,10 +12,14 @@ import RxCocoa
 protocol MainNavigationController {
     func hideNaivgation()
     func showNavigation()
+    func hideActivityIndicator()
+    func retry()
 }
 
 class MainViewController: UIViewController , MainNavigationController {
     
+    @IBOutlet weak var lblCharging: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var initialView: UIView!
     @IBOutlet weak var publicationsView: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -24,6 +28,8 @@ class MainViewController: UIViewController , MainNavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.activityIndicator.startAnimating()
+        self.activityIndicator.hidesWhenStopped = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
 
@@ -72,10 +78,17 @@ class MainViewController: UIViewController , MainNavigationController {
     func showNavigation() {
         self.navigationController?.isNavigationBarHidden = false
         self.segmentedControl.isHidden = false
-
     }
     
-
-
-
+    func hideActivityIndicator() {
+        UIView.animate(withDuration: 0.5) {
+            self.lblCharging.isHidden = true
+            self.activityIndicator.stopAnimating()
+        }
+    }
+    
+    func retry() {
+        self.lblCharging.isHidden = false
+        self.lblCharging.text = "Intentar de nuevo"
+    }
 }

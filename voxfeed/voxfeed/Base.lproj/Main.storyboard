@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -67,6 +66,23 @@
                                     <segue destination="RDD-52-lyv" kind="embed" identifier="publicaitonView" id="Dij-z2-WST"/>
                                 </connections>
                             </containerView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zwX-Zl-wdE">
+                                <rect key="frame" x="177" y="291" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="fPl-h9-wXU"/>
+                                    <constraint firstAttribute="height" constant="20" id="tEI-XT-zoP"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARGANDO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mT-Cl-kT1">
+                                <rect key="frame" x="16" y="319" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="XeU-2Q-iQE"/>
+                                    <constraint firstAttribute="height" constant="21" id="rgs-Cw-2hU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggM-up-qgn">
                                 <rect key="frame" x="0.0" y="42" width="375" height="561"/>
                                 <connections>
@@ -78,6 +94,7 @@
                         <constraints>
                             <constraint firstItem="7iu-WH-9T1" firstAttribute="trailing" secondItem="BVB-nI-nQL" secondAttribute="trailing" id="3MN-kc-kjJ"/>
                             <constraint firstItem="7iu-WH-9T1" firstAttribute="leading" secondItem="BVB-nI-nQL" secondAttribute="leading" id="Aeq-4U-CXE"/>
+                            <constraint firstItem="zwX-Zl-wdE" firstAttribute="centerY" secondItem="FDJ-MP-FLt" secondAttribute="centerY" id="I5x-bi-2ng"/>
                             <constraint firstItem="ggM-up-qgn" firstAttribute="bottom" secondItem="BVB-nI-nQL" secondAttribute="bottom" id="J0R-bR-dtT"/>
                             <constraint firstItem="ggM-up-qgn" firstAttribute="top" secondItem="LwF-cc-6Po" secondAttribute="bottom" id="KMA-jJ-har"/>
                             <constraint firstItem="ggM-up-qgn" firstAttribute="trailing" secondItem="BVB-nI-nQL" secondAttribute="trailing" id="Q8G-bS-FnF"/>
@@ -85,14 +102,19 @@
                             <constraint firstItem="LwF-cc-6Po" firstAttribute="trailing" secondItem="BVB-nI-nQL" secondAttribute="trailing" id="TOo-qI-2oB"/>
                             <constraint firstItem="LwF-cc-6Po" firstAttribute="top" secondItem="FDJ-MP-FLt" secondAttribute="top" id="V00-9o-hh7"/>
                             <constraint firstItem="ggM-up-qgn" firstAttribute="leading" secondItem="BVB-nI-nQL" secondAttribute="leading" id="WR4-rZ-ir3"/>
+                            <constraint firstItem="1mT-Cl-kT1" firstAttribute="top" secondItem="zwX-Zl-wdE" secondAttribute="bottom" constant="8" id="XTh-KV-uBM"/>
                             <constraint firstItem="7iu-WH-9T1" firstAttribute="bottom" secondItem="BVB-nI-nQL" secondAttribute="bottom" id="gD0-Ww-hO1"/>
+                            <constraint firstItem="zwX-Zl-wdE" firstAttribute="centerX" secondItem="FDJ-MP-FLt" secondAttribute="centerX" id="tWS-bg-7cP"/>
+                            <constraint firstItem="1mT-Cl-kT1" firstAttribute="centerX" secondItem="FDJ-MP-FLt" secondAttribute="centerX" id="ufa-m3-sec"/>
                             <constraint firstItem="7iu-WH-9T1" firstAttribute="top" secondItem="LwF-cc-6Po" secondAttribute="bottom" id="x9Z-X1-3O2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BVB-nI-nQL"/>
                     </view>
                     <navigationItem key="navigationItem" title="VoxFeed" id="TTc-Wi-c5k"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="zwX-Zl-wdE" id="r16-bf-4nD"/>
                         <outlet property="initialView" destination="7iu-WH-9T1" id="fg6-lM-LYk"/>
+                        <outlet property="lblCharging" destination="1mT-Cl-kT1" id="6F9-Na-Ysd"/>
                         <outlet property="publicationsView" destination="ggM-up-qgn" id="bEa-Y1-fZI"/>
                         <outlet property="segmentedControl" destination="Ntj-NE-YbT" id="yi8-Q9-FOR"/>
                         <segue destination="WYX-Kf-NHA" kind="show" identifier="toWebView" id="ctL-54-GGy"/>
