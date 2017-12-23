@@ -46,9 +46,6 @@ class PublicationsPresenter : PublicationsProtocol{
             })
     }
 
-    
-
-    
     func rx_getPublications() -> Observable<[PromotedMessage]> {
         let configuration = URLSessionConfiguration.default
             configuration.timeoutIntervalForRequest = 10 // seconds
