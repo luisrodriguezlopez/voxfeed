@@ -15,6 +15,7 @@ import RxCocoa
 class PublicationsViewController: UITableViewController, UIViewControllerPreviewingDelegate {
     
     @IBOutlet var dataProvider:  (UITableViewDataSource & UITableViewDelegate & PublicationDataProvider)!
+    var refreshCtrl = UIRefreshControl()
     var model : [PromotedMessage] = [PromotedMessage]()
     var imagesDictionary : [NSDictionary]!
     var presenter : PublicationsPresenter!
@@ -25,6 +26,8 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
         /** test
          self.dataProvider.model = self.model
         */
+        refreshCtrl.addTarget(self, action: #selector(self.pullToRefresh), for: .valueChanged)
+        self.tableView.addSubview(refreshCtrl)
 
         if( traitCollection.forceTouchCapability == .available){
             
@@ -59,8 +62,8 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard self.model.count > 0 else {
-            self.tableView.rowHeight = self.tableView.frame.height
-            return UITableViewCell()
+        
+            return UITableViewCell.init(frame: self.tableView.frame)
         }
         let currentPublication = self.model[indexPath.row] as PromotedMessage
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardPublicationCell", for: indexPath) as! CardPublicationCell
@@ -106,12 +109,17 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
         self.mainDelegate.hideNaivgation()
         self.show(viewControllerToCommit, sender: self)
     }
+    
+    @objc func pullToRefresh() {
+        self.presenter.retrivePublications()
+    }
 }
 
 extension PublicationsViewController : PublicationsView {
     func successRetrivePublications(publications: [PromotedMessage], images : [NSDictionary]) {
         self.model = publications
         self.imagesDictionary = images
+        self.refreshCtrl.endRefreshing()
         self.mainDelegate.hideActivityIndicator()
         /** test
         self.dataProvider.model = publications
@@ -120,6 +128,8 @@ extension PublicationsViewController : PublicationsView {
         self.tableView.reloadData()
     }
     func showError() {
+        self.model = [PromotedMessage]()
+        self.refreshCtrl.endRefreshing()
         self.mainDelegate.retry()
     }
 }
