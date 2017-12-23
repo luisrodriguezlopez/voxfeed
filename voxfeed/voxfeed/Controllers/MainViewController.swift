@@ -88,7 +88,8 @@ class MainViewController: UIViewController , MainNavigationController {
     }
     
     func retry() {
-        self.lblCharging.isHidden = true
+        self.lblCharging.isHidden = false
+        self.activityIndicator.stopAnimating()
         self.lblCharging.text = "Intentar de nuevo"
     }
 }

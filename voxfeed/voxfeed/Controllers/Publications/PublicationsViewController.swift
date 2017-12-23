@@ -81,6 +81,9 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard self.model.count > 0 else {
+            return
+        }
         let currentPublication = self.model[indexPath.row]
         self.performSegue(withIdentifier: "toDetailVC", sender: currentPublication)
     }
@@ -130,6 +133,7 @@ extension PublicationsViewController : PublicationsView {
     func showError() {
         self.model = [PromotedMessage]()
         self.refreshCtrl.endRefreshing()
+        self.tableView.reloadData()
         self.mainDelegate.retry()
     }
 }

@@ -50,8 +50,12 @@ class PublicationsPresenter : PublicationsProtocol{
 
     
     func rx_getPublications() -> Observable<[PromotedMessage]> {
+        let configuration = URLSessionConfiguration.default
+            configuration.timeoutIntervalForRequest = 10 // seconds
+            configuration.timeoutIntervalForResource = 10
+        let alamoFireManager = Alamofire.SessionManager(configuration: configuration)
         return Observable.create ({ (observe)  in
-            let request = Alamofire.request("https://api.voxfeed.com/public/promoted_messages", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
+            let request = alamoFireManager.request("https://api.voxfeed.com/public/promoted_messages", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
                 guard response.error == nil else {
                     return observe.onError(response.error!)
                 }
@@ -64,7 +68,7 @@ class PublicationsPresenter : PublicationsProtocol{
                 observe.onCompleted()
             })
         return Disposables.create { request.cancel() }
-        })
+        }).retry(3)
     }
     
     
