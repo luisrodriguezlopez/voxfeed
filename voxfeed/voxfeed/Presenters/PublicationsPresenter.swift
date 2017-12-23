@@ -21,7 +21,8 @@ protocol PublicationsView : NSObjectProtocol {
 protocol PublicationsProtocol {
     init(view : PublicationsView , model : [PromotedMessage])
     func retrivePublications()
-    
+    func rx_getPublications() -> Observable<[PromotedMessage]>
+    func rx_retriveImages() -> Observable<[PromotedMessage]>
 }
 
 
@@ -34,7 +35,7 @@ class PublicationsPresenter : PublicationsProtocol{
     
     func retrivePublications() {
         let observablePublications = self.rx_getPublications()
-        observablePublications.subscribe(onNext: { (response) in
+        _ = observablePublications.subscribe(onNext: { (response) in
         
             }, onError: { (error) in
                 self.view.showError()
@@ -42,8 +43,7 @@ class PublicationsPresenter : PublicationsProtocol{
              self.rx_retriveImages(promotedMessages: self.model).bind(onNext: { (images) in
                    self.view.successRetrivePublications(publications: self.model, images: images)
              })
-                
-            })
+        })
     }
 
     func rx_getPublications() -> Observable<[PromotedMessage]> {
@@ -69,32 +69,6 @@ class PublicationsPresenter : PublicationsProtocol{
     }
     
     
-    
-
-    func retriveImages(model : [PromotedMessage], success : @escaping(_ images : [NSDictionary]) ->()) {
-        var imagesDictionaryArray : [NSDictionary] = []
-        for promoteMessage in model {
-            var img : UIImage!
-            self.retriveImage(promotedMessage: promoteMessage, success: { (image) in
-                var dictionary = NSDictionary()
-                dictionary = ["id" :  promoteMessage.getId(), "image" : image]
-                imagesDictionaryArray.append(dictionary)
-                if imagesDictionaryArray.count == self.model.count {
-                    success(imagesDictionaryArray)
-                }
-            })
-        }
-    }
-    
-    func retriveImage(promotedMessage : PromotedMessage , success : @escaping (_ image : UIImage) ->()) {
-        let manager = SDWebImageManager()
-        manager.imageDownloader?.downloadImage(with: URL.init(string: promotedMessage.getPost().getImage()), options: SDWebImageDownloaderOptions.continueInBackground, progress: nil, completed: { (image, data, error, complete) in
-            guard error == nil else {
-                return
-            }
-            success(image!)
-        })
-    }
     
     func rx_retriveImages(promotedMessages : [PromotedMessage]) -> Observable<[NSDictionary]> {
         var imagesArray : [NSDictionary]! = []
@@ -124,7 +98,6 @@ class PublicationsPresenter : PublicationsProtocol{
                         }
                     })
                 })
-        
       })
     }
 }
