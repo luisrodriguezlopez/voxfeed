@@ -22,11 +22,12 @@ protocol PublicationsProtocol {
     init(view : PublicationsView , model : [PromotedMessage])
     func retrivePublications()
     func rx_getPublications() -> Observable<[PromotedMessage]>
-    func rx_retriveImages() -> Observable<[PromotedMessage]>
+    func rx_retriveImages(promotedMessages : [PromotedMessage]) -> Observable<[NSDictionary]>
 }
 
 
 class PublicationsPresenter : PublicationsProtocol{
+    
     var view : PublicationsView!
     var model : [PromotedMessage]!
     required init(view: PublicationsView, model: [PromotedMessage]) {
