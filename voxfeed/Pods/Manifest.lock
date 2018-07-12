@@ -1,11 +1,11 @@
 PODS:
-  - Alamofire (4.6.0)
-  - RxCocoa (4.0.0):
+  - Alamofire (4.7.3)
+  - RxCocoa (4.2.0):
     - RxSwift (~> 4.0)
-  - RxSwift (4.0.0)
-  - SDWebImage (4.2.2):
-    - SDWebImage/Core (= 4.2.2)
-  - SDWebImage/Core (4.2.2)
+  - RxSwift (4.2.0)
+  - SDWebImage (4.4.1):
+    - SDWebImage/Core (= 4.4.1)
+  - SDWebImage/Core (4.4.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.6)
@@ -13,12 +13,19 @@ DEPENDENCIES:
   - RxSwift (~> 4.0)
   - SDWebImage (~> 4.0)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - RxCocoa
+    - RxSwift
+    - SDWebImage
+
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
-  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
-  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
 
-PODFILE CHECKSUM: 34ba6665e2e7bda0dc8ec428b35740e6231a2796
+PODFILE CHECKSUM: 9aff8f3116d70256c7227fdf9beefa186dc8d0b1
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.5.3

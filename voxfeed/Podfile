@@ -13,17 +13,7 @@ target 'voxfeed' do
   use_frameworks!
     pods_default
     
-  target 'voxfeedTests' do
-      inherit! :search_paths
-
-       pods_default # Pods for testing
-  end
-
-  target 'voxfeedUITests' do
-      inherit! :search_paths
-
-    # Pods for testing
-    pods_default
-  end
+  
+  
 
 end

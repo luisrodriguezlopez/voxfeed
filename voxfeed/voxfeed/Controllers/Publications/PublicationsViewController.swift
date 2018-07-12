@@ -23,9 +23,9 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
     var obsevableModel : Observable<PromotedMessage>!
     override func viewDidLoad() {
         super.viewDidLoad()
-        /** test
+
          self.dataProvider.model = self.model
-        */
+        
         refreshCtrl.addTarget(self, action: #selector(self.pullToRefresh), for: .valueChanged)
         self.tableView.addSubview(refreshCtrl)
 
@@ -41,9 +41,9 @@ class PublicationsViewController: UITableViewController, UIViewControllerPreview
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
         self.navigationController?.navigationBar.isHidden = true
-        /**
+        
+         self.tableView.dataSource = self.dataProvider
          self.tableView.delegate = self.dataProvider
-        */
 
     }
     
@@ -124,10 +124,10 @@ extension PublicationsViewController : PublicationsView {
         self.imagesDictionary = images
         self.refreshCtrl.endRefreshing()
         self.mainDelegate.hideActivityIndicator()
-        /** test
+        
         self.dataProvider.model = publications
         self.dataProvider.imagesDictionary = images
-        */
+        
         self.tableView.reloadData()
     }
     func showError() {

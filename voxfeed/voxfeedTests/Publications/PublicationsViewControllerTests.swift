@@ -25,10 +25,14 @@ class PublicationsTests: XCTestCase {
     }
     
     func test_LoadingView_SetsTableViewDelegate() {
-        XCTAssertTrue(sut.tableView.delegate is PublicationDataProvider)
+        XCTAssertTrue(sut.tableView.dataSource is PublicationDataProvider)
     }
     
     func test_LoadingView_DataSourceEqualDelegate() {
+//        XCTAssertNotNil(sut.tableView)
+//        XCTAssertNotNil(sut.tableView.delegate)
+
+//        sut.tableView.delegate
         XCTAssertEqual(sut.tableView.dataSource as? PublicationDataProvider,
                        sut.tableView.delegate as? PublicationDataProvider)
     }

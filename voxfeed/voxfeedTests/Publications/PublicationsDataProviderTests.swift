@@ -11,6 +11,7 @@ import XCTest
 class PublicationsDataProviderTests: XCTestCase {
     let sut = PublicationDataProvider()
     var tableView: UITableView!
+    var cell: MockItemCell!
      let prmomotedMessages = ["id":"1","date":"2016-09-01T06:00:00.000Z","socialNetwork":"facebook","user":["username":"GeekZone","profileImage":"https://s3.amazonaws.com/voxfeed.assets/apps-development-test/profile-image1.png"],"campaign":["name":"Daredevil","coverImage":"https://s3.amazonaws.com/voxfeed.assets/apps-development-test/campaign-cover1.jpg"],"brand":["name":"Netflix","logo":"https://s3.amazonaws.com/voxfeed.assets/apps-development-test/campaign-brand1.png"],"post":["text":"#DaredevilReturns con la nueva temporada en primavera, por si no saben que hacer el próximo fin. #NetflixLoTiene #MarvelSeries","image":"https://s3.amazonaws.com/voxfeed.assets/apps-development-test/post-image1.jpg","link":"https://www.facebook.com/VoxFeed/posts/753620444739473"],"stats":["clicks":25,"shares":17,"likes":54,"comments":4,"audience":1200],"earnings":120] as [String : Any]
     
     override func setUp() {
@@ -36,7 +37,7 @@ class PublicationsDataProviderTests: XCTestCase {
         tableView.dataSource  = sut
         tableView.register(MockItemCell.self,
                                forCellReuseIdentifier: "CardPublicationCell")
-        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+        cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! MockItemCell
 
         XCTAssertTrue(cell is CardPublicationCell)
     }
@@ -64,8 +65,8 @@ class PublicationsDataProviderTests: XCTestCase {
         sut.model = [promotedMessage]
         mockTableView.reloadData()
 
-        let cell = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! MockItemCell
-
+        cell = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! MockItemCell
+        cell.configCell(imagesDictionary: [], currentPublication: (sut.model?[0])!)
         XCTAssertEqual(cell.catchedItem, promotedMessage)
     }
     
