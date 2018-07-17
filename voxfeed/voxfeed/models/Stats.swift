@@ -9,7 +9,28 @@
 import Foundation
 
 
-class Stats {
+class Stats  : Equatable {
+    static func == (lhs: Stats, rhs: Stats) -> Bool {
+        if lhs.likes != rhs.likes {
+            return false
+        }
+        
+        if lhs.shares != rhs.shares {
+            return false
+        }
+        
+        if lhs.clicks != rhs.clicks {
+            return false
+        }
+        if lhs.audience != rhs.audience {
+            return false
+        }
+        if lhs.comments != rhs.comments {
+            return false
+        }
+        return true
+    }
+    
     fileprivate var likes = Int()
     fileprivate var shares = Int()
     fileprivate var clicks = Int()

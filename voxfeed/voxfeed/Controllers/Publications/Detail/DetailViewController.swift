@@ -20,7 +20,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.dataSource = dataProvider
         footerButton.setTitle("Ver publicación en \(promotedMessage.getSocialNetwork())", for: .normal)
         footerButton.backgroundColor = Utils.getColorForSocialNetowrk(socialNetwork: promotedMessage.getSocialNetwork())
 
@@ -28,8 +27,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let statsCell = UINib(nibName: "StatsCell", bundle: nil)
         self.tableView.register(headerCell, forCellReuseIdentifier: "headerCell")
         self.tableView.register(statsCell, forCellReuseIdentifier: "statsCell")
-        self.tableView.delegate = dataProvider
-
+        self.tableView.dataSource = self.dataProvider
+        self.tableView.delegate = self.dataProvider
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -76,7 +76,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="560"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="P3M-dL-WSL" id="Fvt-39-ZV7"/>
+                                    <outlet property="dataSource" destination="Wfo-hz-dH8" id="Asm-xL-DOC"/>
                                     <outlet property="delegate" destination="P3M-dL-WSL" id="txW-Cl-KS8"/>
                                 </connections>
                             </tableView>

@@ -28,5 +28,4 @@ class PublicationDataProvider: NSObject , UITableViewDataSource {
         return cell.configCell(imagesDictionary:  imagesDictionary, currentPublication: self.model![indexPath.row])
     }
     
-
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailDataProvider: NSObject , UITableViewDataSource {
+class DetailDataProvider: NSObject , UITableViewDelegate, UITableViewDataSource {
     var promotedMessage : PromotedMessage!
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -16,10 +16,10 @@ class DetailDataProvider: NSObject , UITableViewDataSource {
     }
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if  section == 1{
+        switch section {
+        case 0: return 1
+        default:
             return 5
-        } else {
-            return 1
         }
     }
     
@@ -29,7 +29,8 @@ class DetailDataProvider: NSObject , UITableViewDataSource {
         switch indexPath.section {
         case 0:  header = tableView.dequeueReusableCell(withIdentifier: "headerCell",for: indexPath) as! HeaderImageDetail
                 return header
-        default :  stats = tableView.dequeueReusableCell(withIdentifier: "statsCell",for: indexPath) as! StatsViewCell
+        default :
+            stats = tableView.dequeueReusableCell(withIdentifier: "statsCell",for: indexPath) as! StatsViewCell
                 return  stats.configCell(indexPath: indexPath, cell: stats, stats: promotedMessage.getStats())
         }
     }
